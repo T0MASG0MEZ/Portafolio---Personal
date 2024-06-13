@@ -1,0 +1,49 @@
+---
+import User from "./Iconos/user.astro";
+---
+
+<article class="flex flex-col">
+    <div class="flex p-4 gap-4 items-center">
+        <User />
+        <h2 class="text-3xl">Sobre mi</h2>
+    </div>
+    <div class="flex gap-x-5 items-center">
+        <div
+            class="flex items-center justify-center flex-col gap-4 max-w-[500px] p-4 text-pretty [&>p>strong]:text-yellow-500 [&>p>strong]:font-semibold"
+        >
+            <p>
+                Mi nombre es <strong> Tomás Gómez Anzani </strong>, aunque me
+                conformo con Tomi. Hace meses, comencé a adentrarme en el mundo
+                de la programación. Siempre me ha apasionado la tecnología, así
+                que decidí explorar este fascinante campo. <strong>
+                    Empecé aprendiendo los fundamentos de la computación y, a
+                    partir de ahí, me sumergí en el universo tecnológico.</strong
+                >
+            </p>
+            <p>
+                Inicialmente me adentré en el mundo de la tecnología armando
+                PC's, pero luego descubrí la programación y me enamoré de ella.
+                Actualmente,<strong>
+                    estoy estudiando Desarrollo Fullstack
+                </strong> y me apasiona explorar todos los aspectos relacionados
+                con la programación. <strong>
+                    Mi objetivo es sumergirme completamente en este vasto campo
+                    y seguir aprendiendo todo lo que pueda sobre él.
+                </strong>
+            </p>
+            <p>
+                Actualmente me <strong>
+                    encuentro inmerso en el desarrollo web
+                </strong>, pero tengo metas ambiciosas para mi futuro. Me
+                interesa profundizar en el campo de la ciberseguridad. <strong>
+                    Estoy emocionado por seguir ampliando mis habilidades y
+                    conocimientos en estas áreas.</strong
+                >
+            </p>
+        </div>
+        <div class="size-96">
+            <img class="w-full rounded-3xl shadow-2xl shadow-white/10"
+            src="../../public/me.jpg" alt="#" />
+        </div>
+    </div>
+</article>

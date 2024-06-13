@@ -1,0 +1,51 @@
+---
+import Buttons from "../components/Buttons.astro";
+import Coding from "../components/Iconos/coding.astro";
+import Proyect from "../components/Proyect.astro";
+import Sobremi from "../components/Sobremi.astro";
+---
+
+<header class="max-w-[1440px]">
+    <section class="flex items-center justify-center pt-12 mt-16">
+        <article class="flex flex-col justify-center">
+            <div
+                class="[&>h2>strong]:text-yellow-500 [&>h2>strong]:font-semibold"
+            >
+                <h2 class="text-5xl">Hola, soy <strong>Tomas Gomez</strong></h2>
+            </div>
+            <div
+                class="text-3xl [&>h2>strong]:text-yellow-500 [&>h2>strong]:font-semibold"
+            >
+                <h2 class="opacity-30">Desarrollador Front-End</h2>
+                <h2>
+                    Estudiante de desarrollo fullstack en <strong
+                        >Coder House</strong
+                    >
+                </h2>
+                <h2 class="opacity-35">
+                    La belleza reside en la simplicidad de lo mismo.
+                </h2>
+            </div>
+        </article>
+        <article>
+            <picture class="">
+                <img src="../../public/svg/coding.svg" alt="" class="w-full" />
+            </picture>
+        </article>
+    </section>
+    <Buttons />
+</header>
+<main class="max-w-[1440px]">
+    <section class="flex items-center flex-col justify-center mt-12">
+        <h2 class="text-5xl flex items-center gap-4 p-4">
+            <Coding class="size-10" />
+            Proyectos
+        </h2>
+        <Proyect />
+    </section>
+    <section></section>
+    <section class="flex items-center justify-center gap-4 m-12">
+        <Sobremi />
+    </section>
+</main>
+<footer></footer>

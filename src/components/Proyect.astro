@@ -1,0 +1,89 @@
+---
+import Html from "./Iconos/html.astro";
+import Sass from "./Iconos/sass.astro";
+
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        class: "bg-[#FF5733] text-white",
+        icon: Html,
+    },
+    SASS: {
+        name: "SASS",
+        class: "bg-[#CD6799] text-white",
+        icon: Sass,
+    },
+};
+import Github from "./Iconos/github.astro";
+import Link from "./Iconos/link.astro";
+import Buttonproyect from "../components/subcomponents/buttonproyect.astro";
+
+const PROJECTS = [
+    {
+        title: "Espresso Haven",
+        description:
+            "Pagina echa para la venta de cursos, maquinaria. contando con una presentacion del creador y un apartado de galeria",
+        link: "#",
+        github: "#",
+        image: "../public/espressohaven.webp",
+        tag: [TAGS.HTML],
+    },
+    {
+        title: "Espresso Haven",
+        description:
+            "Pagina echa para la venta de cursos, maquinaria. contando con una presentacion del creador y un apartado de galeria",
+        link: "#",
+        github: "#",
+        image: "../public/espressohaven.webp",
+        tag: [TAGS.HTML, TAGS.SASS],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ title, description, image, tag }) => (
+        <article class="grid grid-cols-2 items-center">
+            <div class="p-6 max-w-[550px]">
+                <img
+                    src={image}
+                    alt={`La captura de pantalla de ${image}`}
+                    class="rounded-2xl shadow-2xl shadow-white/20"
+                />
+            </div>
+            <div class="max-w-[600px] flex flex-col gap-3">
+                <h3 class="text-4xl">{title}</h3>
+                <ul class="flex gap-4">
+                    {tag.map((tags) => (
+                        <li>
+                            <span class=`flex items-center gap-2 px-2 py-1 rounded-xl text-xs ${tags.class}`>
+                                <tags.icon />
+                                {tags.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                <p class="text-lg max-w-96"> {description}</p>
+                <div class="flex items-center gap-5">
+                    <a
+                        href="#"
+                        class="text-2xl py-2 px-4 rounded-2xl flex items-center gap-2 z-10"
+                    >
+                        <Buttonproyect>
+                            <Github />
+                            <p>Github</p>
+                        </Buttonproyect>
+                    </a>
+                    <a
+                        href="#"
+                        class="text-2xl py-2 px-4 rounded-2xl flex items-center gap-2 z-10"
+                    >
+                        <Buttonproyect>
+                            <Link />
+                            <p>Link</p>
+                        </Buttonproyect>
+                    </a>
+                </div>
+            </div>
+        </article>
+    ))
+}
