@@ -4,26 +4,26 @@ import Coding from "../components/Iconos/coding.astro";
 import Proyect from "../components/Proyect.astro";
 import Sobremi from "../components/Sobremi.astro";
 import Greetings from "../components/Greetings.astro";
-import BentoSkills from "../components/BentoSkills.astro";
+import Skills from "../components/skills.astro";
 ---
 
 <header class="max-w-[1440px]">
     <section
-        class="flex items-center flex-col justify-center h-screen gap-12"
+        class="flex items-center flex-col justify-center pt-24 lg:h-screen gap-12"
     >
         <Greetings />
         <Buttons />
     </section>
 </header>
 <main class="max-w-[1440px]">
-    <section class="flex items-center flex-col justify-center mt-12">
-        <h2 class="text-5xl flex items-center gap-4 p-4">
+    <section class="flex items-center flex-col justify-center m-4">
+        <h2 class="text-5xl flex items-center gap-4 pt-24 " id="proyects">
             <Coding class="size-10" />
             Proyectos
         </h2>
         <Proyect />
     </section>
-    <BentoSkills />
+    <Skills />
     <section class="flex items-center justify-center gap-4 m-12">
         <Sobremi />
     </section>

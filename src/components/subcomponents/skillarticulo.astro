@@ -1,0 +1,20 @@
+---
+const { name } = Astro.props;
+---
+
+<div
+    class="flex flex-col items-center justify-center bg-slate-900/80 px-8 pt-4 rounded-xl
+            hover:bg-slate-700 relative group transition-scale duration-500 ease-in-out"
+>
+    <picture
+        class="group-hover:scale-110 group-hover:-translate-y-1 transition-scale duration-500 ease-in-out"
+    >
+        <slot />
+    </picture>
+    <h2
+        class="text-sm font-bold text-white/90 hidden absolute bottom-0 bg-black/90 rounded-t-3xl px-8 pt-2
+            group-hover:block transition-all duration-500 ease-in-out"
+    >
+        {name}
+    </h2>
+</div>

@@ -14,7 +14,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/public/svg/user-code.svg">
+		<link rel="icon" href="/public/svg/user-code.svg" />
 		<title>{title}</title>
 	</head>
 	<body class="relative h-full w-full bg-neutral-950">
@@ -28,8 +28,9 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	html {
-		font-family: 'Comfortaa Variable' ,system-ui;
+		font-family: "Comfortaa Variable", system-ui;
 		color: white;
+		scroll-behavior: smooth;
 	}
 	body {
 		display: flex;
