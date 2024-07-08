@@ -23,7 +23,7 @@ import Buttonanimate from "./subcomponents/buttonanimate.astro";
     <li
         class="px-5 py-2 rounded-3xl hover:-translate-y-1 transition-all duration-150"
     >
-        <button class="flex items-center gap-2" onclick="selectText()">
+        <button class="flex items-center gap-2">
             <Buttonanimate>
                 <Mail />
                 <h2 class="text-lg md:text-xl pl-2" id="text">
@@ -47,11 +47,3 @@ import Buttonanimate from "./subcomponents/buttonanimate.astro";
         </a>
     </li>
 </ul>
-
-<script>
-    function selectText() {
-        let $text = document.getElementById("text");
-        document.execCommand("selectAll");
-        document.execCommand("copy");
-    }
-</script>
