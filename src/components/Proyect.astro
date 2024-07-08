@@ -1,18 +1,42 @@
 ---
 import Html from "./Iconos/html.astro";
 import Sass from "./Iconos/sass.astro";
+import Tailwind from "./Iconos/tailwind.astro";
+import Js from "./Iconos/js.astro";
+import astro from "./Iconos/astro.astro";
+import react from "./Iconos/react.astro";
 
 const TAGS = {
     HTML: {
-        name: "HTML",
+        name: "Html",
         class: "bg-[#FF5733] text-white",
         icon: Html,
     },
     SASS: {
-        name: "SASS",
+        name: "Sass",
         class: "bg-[#CD6799] text-white",
         icon: Sass,
     },
+    TAILWIND: {
+        name: "Tailwind",
+        class: "bg-[#06b6d4]/70 text-white",
+        icon: Tailwind,
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        class: "bg-yellow-300/80 text-white",
+        icon: Js,
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-violet-900/90 text-white",
+        icon: astro,
+    },
+    REACT: {
+        name: "React",
+        class: "bg-blue-900/80 text-white",
+        icon: react,
+    }
 };
 import Github from "./Iconos/github.astro";
 import Link from "./Iconos/link.astro";
@@ -20,37 +44,46 @@ import Buttonproyect from "../components/subcomponents/buttonproyect.astro";
 
 const PROJECTS = [
     {
-        title: "Espresso Haven",
+        title: "COZMO.",
         description:
-            "Pagina echa para la venta de cursos, maquinaria. contando con una presentacion del creador y un apartado de galeria",
-        link: "#",
-        github: "#",
-        image: "../public/espressohaven.webp",
-        tag: [TAGS.HTML],
+            "Proyecto de cliente, para la venta de drivers de musica",
+        link: "https://cozmo-one.vercel.app",
+        github: null,
+        image: "/cozmo.webp",
+        tag: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT],
+    },
+    {
+        title: "Duki Fan Page",
+        description:
+            "Pagina dedicada a un artista, con data no real simulando que la pagina fuese realidad",
+        link: "https://duki-fan-page.vercel.app/",
+        github: "https://github.com/T0MASG0MEZ/Duki-FanPage",
+        image: "/dukifanpage.webp",
+        tag: [TAGS.HTML, TAGS.TAILWIND, TAGS.JAVASCRIPT],
     },
     {
         title: "Espresso Haven",
         description:
             "Pagina echa para la venta de cursos, maquinaria. contando con una presentacion del creador y un apartado de galeria",
-        link: "#",
-        github: "#",
-        image: "../public/espressohaven.webp",
+        link: "https://coffe-shop-mauve.vercel.app/",
+        github: "https://github.com/T0MASG0MEZ/Coffe-Shop",
+        image: "/espressohaven.webp",
         tag: [TAGS.HTML, TAGS.SASS],
     },
 ];
 ---
 
 {
-    PROJECTS.map(({ title, description, image, tag }) => (
-        <article class="grid grid-cols-2 items-center">
-            <div class="p-6 max-w-[550px]">
+    PROJECTS.map(({ title, description, image, tag, link, github }) => (
+        <article class="flex flex-col-reverse md:flex-row p-8 lg:gap-12 items-center justify-center">
+            <picture class="p-6 max-w-[500px] lg:max-w-[600px]">
                 <img
                     src={image}
                     alt={`La captura de pantalla de ${image}`}
-                    class="rounded-2xl shadow-2xl shadow-white/20"
+                    class="rounded-2xl shadow-2xl shadow-white/20 h-full"
                 />
-            </div>
-            <div class="max-w-[600px] flex flex-col gap-3">
+            </picture>
+            <div class="flex flex-col lgp-8 lg:items-start gap-6 max-w-[600px]">
                 <h3 class="text-4xl">{title}</h3>
                 <ul class="flex gap-4">
                     {tag.map((tags) => (
@@ -62,20 +95,19 @@ const PROJECTS = [
                         </li>
                     ))}
                 </ul>
-                <p class="text-lg max-w-96"> {description}</p>
-                <div class="flex items-center gap-5">
-                    <a
-                        href="#"
-                        class="text-2xl py-2 px-4 rounded-2xl flex items-center gap-2 z-10"
-                    >
+                <p class="text-lg grow max-w-[400px]"> {description}</p>
+                <div class="flex items-start gap-8">
+                    {github && (
+                        <a href={github} target="_blank" class="text-2xl py-2 rounded-2xl flex items-center gap-2 z-10">
                         <Buttonproyect>
                             <Github />
                             <p>Github</p>
                         </Buttonproyect>
                     </a>
+                    )}
                     <a
-                        href="#"
-                        class="text-2xl py-2 px-4 rounded-2xl flex items-center gap-2 z-10"
+                        href={link} target="_blank"
+                        class="text-2xl py-2 rounded-2xl flex items-center gap-2 z-10"
                     >
                         <Buttonproyect>
                             <Link />

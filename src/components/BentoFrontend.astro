@@ -1,0 +1,49 @@
+---
+const { title } = Astro.props;
+import Bentoarticulo from "./subcomponents/Bentoarticulo.astro";
+import Logotailwind from "./subcomponents/icons/logotailwind.astro";
+import Logocss from "./subcomponents/icons/Logocss.astro";
+import Logohtml from "./subcomponents/icons/Logohtml.astro";
+import Logojavascript from "./subcomponents/icons/Logojavascript.astro";
+import Logosass from "./subcomponents/icons/Logosass.astro";
+import Logoastro from "./subcomponents/icons/Logoastro.astro";
+---
+
+<article
+    class=`
+    ${ Astro.props.class }
+    shadow-2xl shadow-white/10 border border-black/20`
+>
+    <div class="flex justify-center">
+        <h2 class="text-2xl text-white/90 p-4">{title}</h2>
+    </div>
+    <div class="grilla">
+        <Bentoarticulo name="Html">
+            <Logohtml />
+        </Bentoarticulo>
+        <Bentoarticulo name="CSS">
+            <Logocss />
+        </Bentoarticulo>
+        <Bentoarticulo name="JavaScript">
+            <Logojavascript />
+        </Bentoarticulo>
+        <Bentoarticulo name="Tailwind">
+            <Logotailwind />
+        </Bentoarticulo>
+        <Bentoarticulo name="Sass">
+            <Logosass />
+        </Bentoarticulo>
+        <Bentoarticulo name="Astro">
+            <Logoastro />
+        </Bentoarticulo>
+    </div>
+</article>
+
+<style>
+    .grilla {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+</style>

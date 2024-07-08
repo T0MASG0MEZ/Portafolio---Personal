@@ -1,0 +1,25 @@
+---
+import BentoFrontend from "./BentoFrontend.astro";
+import BentoBackend from "./BentoBackend.astro";
+import BentoHerramientas from "./BentoHerramientas.astro";
+import BentoAprendiendo from "./BentoAprendiendo.astro";
+---
+
+<section
+    class="w-full max-w-[1400px] m-4
+    grid grid-cols-10 auto-rows-[25rem] gap-6
+    mx-auto p-20"
+>
+    <BentoFrontend class="col-span-10 lg:col-span-6"
+    title="Frontend"
+    />
+    <BentoAprendiendo class="col-span-10 lg:col-span-4" 
+    title="Aprendiendo"
+    />
+    <BentoHerramientas class="col-span-10 lg:col-span-4" 
+    title="Herramientas"
+    />
+    <BentoBackend class="col-span-10 lg:col-span-6" 
+    title="Backend"
+    />
+</section>

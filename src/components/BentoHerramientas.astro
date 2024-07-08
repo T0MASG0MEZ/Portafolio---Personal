@@ -1,0 +1,45 @@
+---
+const { title } = Astro.props;
+import Bentoarticulo from "./subcomponents/Bentoarticulo.astro";
+import Logogit from "./subcomponents/icons/Logogit.astro";
+import Logogithub from "./subcomponents/icons/Logogithub.astro";
+import Logoterminal from "./subcomponents/icons/Logoterminal.astro";
+import Logonpm from "./subcomponents/icons/Logonpm.astro";
+import Logovisual from "./subcomponents/icons/Logovisual.astro";
+---
+
+<article
+    class=`
+    ${ Astro.props.class }
+    flex flex-col shadow-2xl shadow-white/10 border border-black/20`
+>
+    <div class="flex justify-center">
+        <h2 class="text-2xl text-white/90 p-4">{title}</h2>
+    </div>
+    <div class="grilla">
+        <Bentoarticulo name="Git">
+            <Logogit />
+        </Bentoarticulo>
+        <Bentoarticulo name="Github">
+            <Logogithub />
+        </Bentoarticulo>
+        <Bentoarticulo name="Terminal">
+            <Logoterminal />
+        </Bentoarticulo>
+        <Bentoarticulo name="Npm">
+            <Logonpm />
+        </Bentoarticulo>
+        <Bentoarticulo name="Vscode">
+            <Logovisual />
+        </Bentoarticulo>
+    </div>
+</article>
+
+<style>
+    .grilla {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+</style>
